@@ -16,10 +16,10 @@ returns true if addresses are same. "==" checks the address of the object.
 
 StringBuilder - stringbuilder works in character array internally  
 `
-//constructors of StringBuilder class
 
-        StringBuilder(); // default constructor
-        StringBuilder(String str); // constructor with string
-        StringBuilder(int capacity); // constructor with capacity
+//constructors of StringBuilder class 
+StringBuilder(); // default constructor
+StringBuilder(String str); // constructor with string
+StringBuilder(int capacity); // constructor with capacity
 
 `
