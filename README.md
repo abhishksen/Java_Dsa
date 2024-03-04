@@ -1,5 +1,11 @@
 # Java_Dsa
 
+# Arrays
+Array in Java is a list of similar type data in a contiguous manner. Array can be one dimensional or multidimensional.
+
+`dataType[] varName = new dataType[size];
+`
+
 # Strings
 
 Interning & new() in java
