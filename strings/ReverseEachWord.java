@@ -19,5 +19,6 @@ public class ReverseEachWord {
         }
         ans += sb; // to add the last word
         System.out.println(ans);
+        sc.close();
     }
 }

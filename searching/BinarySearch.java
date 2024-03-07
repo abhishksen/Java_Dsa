@@ -20,9 +20,10 @@ public class BinarySearch {
             int m = l + (r - l) / 2;
             if (arr[m] == key)
                 return m;
-            if (arr[m] > key)
+            else if (arr[m] > key)
                 return recursiveSearch(arr, l, m - 1, key);
-            return recursiveSearch(arr, m + 1, r, key);
+            else
+                return recursiveSearch(arr, m + 1, r, key);
         }
         return -1;
     }

@@ -16,5 +16,6 @@ public class StringBasics {
         String s2 = sc.nextLine(); // scans whole line
         // String s2 = sc.next(); // scans only first word
         System.out.println(s2);
+        sc.close();
     }
 }

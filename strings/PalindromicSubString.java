@@ -38,5 +38,6 @@ public class PalindromicSubString {
         String str = sc.nextLine();
         System.out.println(checkPalindrome(str));
         System.out.println(countPalindromicSubString(str));
+        sc.close();
     }
 }

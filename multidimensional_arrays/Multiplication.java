@@ -59,5 +59,6 @@ public class Multiplication {
 
         multiply(arr1, arr2, r1, c1, r2, c2);
 
+        sc.close();
     }
 }

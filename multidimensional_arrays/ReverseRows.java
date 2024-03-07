@@ -38,5 +38,6 @@ public class ReverseRows {
             reverserows(arr[i]);
         }
         print(arr);
+        sc.close();
     }
 }

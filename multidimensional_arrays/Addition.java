@@ -47,5 +47,6 @@ public class Addition {
             }
         }
         print(res);
+        sc.close();
     }
 }

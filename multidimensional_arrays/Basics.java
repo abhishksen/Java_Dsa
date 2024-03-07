@@ -38,5 +38,6 @@ public class Basics {
         }
         print(arr2);
 
+        sc.close();
     }
 }

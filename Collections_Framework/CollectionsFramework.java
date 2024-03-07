@@ -213,9 +213,9 @@ public class CollectionsFramework {
         System.out.println("min " + Collections.min(list));
 
         // Iterator class
-        Iterator it = newList.iterator();
-        while (it.hasNext()) {
-            System.out.println("Iterated values = " + it.next());
+        Iterator I = newList.iterator();
+        while (I.hasNext()) {
+            System.out.println("Iterated values = " + I.next());
         }
 
     }
