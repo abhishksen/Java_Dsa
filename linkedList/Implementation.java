@@ -29,14 +29,14 @@ public class Implementation {
 
         // calculating size
         int size() {
-            // int count = 0;
-            // Node temp = head;
-            // while (temp != null) {
-            // count++;
-            // temp = temp.next;
-            // }
-            // return count;
-            return size;
+            int count = 0;
+            Node temp = head;
+            while (temp != null) {
+                count++;
+                temp = temp.next;
+            }
+            return count;
+            // return size;
         }
 
         // insertion at tail
@@ -103,7 +103,7 @@ public class Implementation {
         // delete element
         void deleteAt(int index) {
             Node temp = head;
-            for (int i = 1; i <= index-1; i++) {
+            for (int i = 1; i <= index - 1; i++) {
                 temp = temp.next;
             }
             temp.next = temp.next.next;
@@ -150,6 +150,6 @@ public class Implementation {
         list.deleteAt(10);
         list.display();
         // System.out.println(list.getElementAtN(1));
-        // System.out.println(list.size);
+        System.out.println(list.size);
     }
 }
