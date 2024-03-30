@@ -55,6 +55,8 @@ public class DoublyLinkedList {
         }
     }
 
+    // TODO: Implement delete method
+
     public void display() {
         Node current = head;
         Node last = null;
@@ -81,11 +83,11 @@ public class DoublyLinkedList {
             this.val = val;
         }
 
-        public Node(int val, Node next, Node prev) {
-            this.val = val;
-            this.next = next;
-            this.prev = prev;
-        }
+        // public Node(int val, Node next, Node prev) {
+        // this.val = val;
+        // this.next = next;
+        // this.prev = prev;
+        // }
     }
 
     public static void main(String[] args) {
