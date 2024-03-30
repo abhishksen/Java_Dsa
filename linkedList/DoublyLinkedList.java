@@ -1,101 +1,106 @@
 package linkedList;
 
 public class DoublyLinkedList {
+
     Node head;
 
-    private class Node {
-        int val;
-        Node next;
-        Node prev;
-
-        Node(int val) {
-            this.val = val;
-        }
-
-        Node(int val, Node next, Node prev) {
-            this.val = val;
-            this.next = next;
-            this.prev = prev;
-        }
-    }
-
-    void insertAtStart(int val) {
+    public void insertFirst(int val) {
         Node newNode = new Node(val);
         newNode.next = head;
+        newNode.prev = null;
         if (head != null) {
             head.prev = newNode;
         }
         head = newNode;
     }
 
-    void insertAtEnd(int val) {
+    public void insertLast(int val) {
         Node newNode = new Node(val);
+        Node current = head;
         if (head == null) {
+            newNode.prev = null;
             head = newNode;
             return;
         }
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
+        while (current.next != null) {
+            current = current.next;
         }
-        temp.next = newNode;
-        newNode.prev = temp;
+        current.next = newNode;
+        newNode.prev = current;
     }
 
-    void insertAtPos(int val, int pos) {
+    public Node find(int value) {
+        Node current = head;
+        while (current != null) {
+            if (current.val == value) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    public void insert(int after, int val) {
+        Node p = find(after);
+        if (p == null) {
+            System.out.println("Node not found");
+            return;
+        }
         Node newNode = new Node(val);
-        if (pos == 0) {
-            newNode.next = head;
-            if (head != null) {
-                head.prev = newNode;
-            }
-            head = newNode;
-            return;
+        newNode.next = p.next;
+        p.next = newNode;
+        newNode.prev = p;
+        if (newNode.next != null) {
+            newNode.next.prev = newNode;
         }
-        Node temp = head;
-        for (int i = 0; i < pos - 1; i++) {
-            if (temp == null) {
-                System.out.println("Position not found");
-                return;
-            }
-            temp = temp.next;
-        }
-        if (temp == null) {
-            System.out.println("Position not found");
-            return;
-        }
-        newNode.next = temp.next;
-        if (temp.next != null) {
-            temp.next.prev = newNode;
-        }
-        temp.next = newNode;
-        newNode.prev = temp;
     }
 
-    void display() {
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.val);
-            if (temp.next != null)
-                System.out.print(" -> ");
-            temp = temp.next;
+    public void display() {
+        Node current = head;
+        Node last = null;
+        while (current != null) {
+            System.out.print(current.val + " -> ");
+            last = current;
+            current = current.next;
         }
-        System.out.println();
+        System.out.println("null");
+        System.out.println("Reverse: ");
+        while (last != null) {
+            System.out.print(last.val + " -> ");
+            last = last.prev;
+        }
+        System.out.println("null");
     }
 
-    // driver code
+    private class Node {
+        int val;
+        Node next;
+        Node prev;
+
+        public Node(int val) {
+            this.val = val;
+        }
+
+        public Node(int val, Node next, Node prev) {
+            this.val = val;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
     public static void main(String[] args) {
-        DoublyLinkedList dl = new DoublyLinkedList();
-        dl.insertAtStart(0);
-        dl.insertAtStart(20);
-        dl.display();
-        dl.insertAtEnd(30);
-        dl.insertAtEnd(40);
-        dl.display();
-        dl.insertAtPos(10, 0);
-        dl.insertAtPos(15, 2);
-        dl.display();
-
+        DoublyLinkedList list = new DoublyLinkedList();
+        list.insertFirst(1);
+        list.insertFirst(2);
+        list.insertFirst(3);
+        list.insertFirst(4);
+        list.display();
+        list.insertLast(5);
+        list.insertLast(6);
+        list.display();
+        list.insert(3, 7);
+        list.insert(7, 40);
+        list.insert(78, 100);
+        list.display();
     }
-
 }
