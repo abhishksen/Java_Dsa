@@ -55,7 +55,53 @@ public class DoublyLinkedList {
         }
     }
 
-    // TODO: Implement delete method
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        head = head.next;
+        head.prev = null;
+    }
+
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next.prev = null;
+        current.next = null;
+    }
+
+    public void delete(int val) {
+        Node deleteNode = find(val);
+        if (deleteNode == null) {
+            System.out.println("Node not found");
+            return;
+        }
+        if (deleteNode.prev == null) {
+            deleteFirst();
+            return;
+        }
+        if (deleteNode.next == null) {
+            deleteLast();
+            return;
+        }
+        deleteNode.prev.next = deleteNode.next;
+        deleteNode.next.prev = deleteNode.prev;
+    }
 
     public void display() {
         Node current = head;
@@ -92,7 +138,10 @@ public class DoublyLinkedList {
 
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
+        list.deleteFirst();
         list.insertFirst(1);
+        list.deleteLast();
+        list.display();
         list.insertFirst(2);
         list.insertFirst(3);
         list.insertFirst(4);
@@ -104,5 +153,14 @@ public class DoublyLinkedList {
         list.insert(7, 40);
         list.insert(78, 100);
         list.display();
+        list.deleteFirst();
+        list.display();
+        list.deleteLast();
+        list.display();
+        list.delete(7);
+        list.display();
+        list.insert(40, 55);
+        list.display();
+        list.delete(54);
     }
 }

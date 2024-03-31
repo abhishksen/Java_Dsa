@@ -212,10 +212,15 @@ public class CollectionsFramework {
         System.out.println("Max " + Collections.max(newList));
         System.out.println("min " + Collections.min(list));
 
-        // Iterator class
-        Iterator I = newList.iterator();
+        // Iterator class string type
+        Iterator<String> I = newList.iterator();
         while (I.hasNext()) {
             System.out.println("Iterated values = " + I.next());
+        }
+        // Iterator class integer type
+        Iterator<Integer> I1 = list.iterator();
+        while (I1.hasNext()) {
+            System.out.println("Iterated values = " + I1.next());
         }
 
     }
