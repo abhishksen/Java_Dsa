@@ -1,4 +1,4 @@
-// implement an algorithm to determine if a string has all unique characters.
+//! implement an algorithm to determine if a string has all unique characters.
 package crackingTheCodingInterview.ArraysAndStrings;
 
 public class IsUnique {

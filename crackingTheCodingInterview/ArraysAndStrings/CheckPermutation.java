@@ -1,4 +1,4 @@
-// given two strings,check if one is a permutation of other
+//! given two strings,check if one is a permutation of other
 package crackingTheCodingInterview.ArraysAndStrings;
 
 import java.util.Arrays;
