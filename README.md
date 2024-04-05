@@ -1,6 +1,8 @@
 # Java_Dsa
 
-Complete java language and data structures and algorithms code playlist.
+![image](https://github.com/abhishksen/Java_Dsa/assets/100835323/66067704-afbe-4ec8-9e4a-6c5d4cde2e7f)
+
+Complete java language and data structures & algorithms preparation playlist.
 
 # Arrays
 
