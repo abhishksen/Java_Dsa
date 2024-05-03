@@ -43,10 +43,20 @@ public class Basics {
         return n != 0 && (n & (n - 1)) == 0;
     }
 
+    // count the number of set bits
+    public static int countSetBits(int n) {
+        int count = 0;
+        while (n > 0) {
+            n = n & (n - 1);
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         int n = 5;
         int i = 2;
-        System.out.println(isSet(n, i)); // false
+        System.out.println(isSet(n, i)); // true
         System.out.println(setBit(n, i)); // 5
         System.out.println(clearBit(n, i)); // 1
         System.out.println(toggleBit(n, i)); // 1
@@ -54,5 +64,6 @@ public class Basics {
         System.out.println(removeLastSetBit(n)); // 4
         System.out.println(getRightmostSetBit(n)); // 1
         System.out.println(isPowerOf2(n)); // false
+        System.out.println(countSetBits(n)); // 2
     }
 }
